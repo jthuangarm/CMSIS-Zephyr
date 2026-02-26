@@ -20,7 +20,7 @@ and run the image on the target hardware.
 - Press the **Load & Debug application** button to start a debug session.
 
 > [!NOTE]
-> Check that the **Arm CMSIS Solution** extension is at least v1.64.0.
+> Check that the **Arm CMSIS Solution** extension is at least v1.66.0.
 
 ### Switch to a different board
 
@@ -56,6 +56,23 @@ Zephyr board name like this:
 > [!NOTE]
 > Make sure to delete the previous `/out` and `/tmp` directories before saving the updated `*.csolution.yml` file,
 > otherwise the solution might not load correctly.
+
+## Use the Zephyr Terminal in CMSIS View
+
+Keil Studio includes a built-in **Zephyr Terminal** that runs `west` commands directly inside the IDE. When the terminal opens, it automatically sets the example build folder as the working directory and configures the Zephyr environment.
+
+Example `west` commands:
+
+```bash
+# Build the project
+west build
+
+# Open GUI configuration
+west build -t guiconfig
+
+# Generate RAM report
+west build -t ram_report
+```
 
 ## Introduction video
 
